@@ -384,7 +384,12 @@ def run_agent(user_question):
     words = user_question.split()
     unique_words = set(words)
 
-    if len(words) < 5:
+    identity_questions = ["who are you", "what are you", "what can you do", 
+                         "what do you do", "help", "how do you work",
+                         "what is this", "who made you"]
+    is_identity = any(q in user_question.lower() for q in identity_questions)
+
+    if len(words) < 5 and not is_identity:
         return "⚠ Your question is too short. Could you give me more detail?"
 
     if len(unique_words) < 3:
