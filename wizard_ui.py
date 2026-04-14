@@ -19,6 +19,15 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
+st.markdown("""
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0a0a0a">
+<meta property="og:title" content="The Wizard — Research Agent v1.0">
+<meta property="og:description" content="An AI research agent that searches the web, scores confidence honestly, and flags misinformation. Ask anything.">
+<meta property="og:image" content="https://raw.githubusercontent.com/spacecowboy0077/the-wizard/main/wizard.png">
+<meta property="og:type" content="website">
+""", unsafe_allow_html=True)
+
 # Terminal styling
 st.markdown("""
 <style>
@@ -206,6 +215,20 @@ div[data-testid="stChatInput"] button {
             
 .main .block-container {
     padding-bottom: 100px !important;
+}
+
+.stToolbar {
+    display: none !important;
+}
+
+header[data-testid="stHeader"] {
+    display: none !important;
+}
+
+html, body, [data-testid="stAppViewContainer"], [data-testid="stApp"] {
+    background-color: #0a0a0a !important;
+    color: #00cc33 !important;
+    color-scheme: dark !important;
 }
 
 </style>
